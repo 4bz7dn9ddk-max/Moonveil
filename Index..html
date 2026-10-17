@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Moonveil ☾</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Nunito:wght@400;700;800&display=swap');
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at top,#49345e,#24203e 48%,#111226);color:#fff3fb;font-family:Nunito,Arial,sans-serif;overflow-x:hidden}button,input,textarea{font:inherit}button{cursor:pointer;transition:.2s}button:hover{transform:translateY(-2px)}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #f2c8df;outline-offset:3px}.star{position:fixed;color:#fff0c6;pointer-events:none;animation:twinkle 2s infinite alternate;z-index:0}@keyframes twinkle{to{opacity:1;transform:scale(1.2)}}.wrap{position:relative;z-index:1;width:min(900px,94%);margin:auto;padding:25px 0 40px}header{text-align:center;padding:20px 10px}header .moon{font-size:65px}h1,h2,h3{font-family:'Cormorant Garamond',Georgia,serif}h1{font-size:clamp(48px,10vw,78px);letter-spacing:3px;color:#f5dff7;text-shadow:0 0 25px #cda7ee66;margin:0}header p{color:#d9cde8;line-height:1.8}.nav{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:15px 0 25px}.nav button,.soft{border:1px solid #ffffff26;background:#ffffff0e;color:#f9eafa;border-radius:999px;padding:11px 14px}.nav button.active{background:#d9b8ed;color:#291b3b}.page{display:none;animation:fade .35s}.page.active{display:block}@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}.card{background:linear-gradient(135deg,#ffffff12,#ffffff08);border:1px solid #ffffff24;border-radius:26px;padding:clamp(20px,4vw,32px);margin:15px 0;box-shadow:0 16px 45px #07071424}.hero{text-align:center;padding:35px 22px}.hero h2{font-size:clamp(30px,6vw,44px);color:#f5d9f5}.hero p,.card p{line-height:1.9;color:#e5d9f0}.characters{font-size:clamp(55px,12vw,90px);margin:10px}.tag{display:inline-block;background:#f1d4f01b;border:1px solid #ffffff20;border-radius:999px;padding:7px 13px;margin:4px;font-size:13px}.primary{border:0;background:linear-gradient(135deg,#e9c5e7,#cbb6f0);color:#291d3b;border-radius:15px;padding:12px 19px;font-weight:800;margin:5px}.letter{white-space:pre-wrap;text-align:left;direction:ltr;background:#1713298a;border:1px dashed #d8b7e6a8;border-radius:20px;padding:23px;line-height:2.05;color:#f7e9f7;font-family:'Cormorant Garamond',Georgia,serif;font-size:21px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:13px}.memory{background:#ffffff0b;border:1px solid #ffffff20;border-radius:20px;padding:18px;text-align:center;line-height:1.8;overflow-wrap:anywhere}.emoji{font-size:34px}.memory b{color:#f4d8f2}input,textarea{width:100%;background:#171329a8;color:#fff5ff;border:1px solid #cbb2df80;border-radius:14px;padding:13px;font-size:16px}textarea{min-height:125px;resize:vertical;line-height:1.7}label{display:block;margin:13px 0 7px;font-weight:700}.gift{display:block;margin:12px auto 20px;background:transparent;border:0;font-size:88px}.message{background:#211a39;border:1px solid #ffffff1c;border-radius:19px;padding:18px;line-height:1.9;color:#f5def8;min-height:58px}.question{padding:18px;background:#ffffff08;border:1px solid #ffffff18;border-radius:18px;margin:13px 0}.answers{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.answers button{border:1px solid #ffffff22;background:#ffffff10;color:#f7eafa;border-radius:13px;padding:10px 13px}.answers button.chosen{background:#d8b8ec;color:#291b3b}.small{font-size:13px;color:#bdb0d0!important}#quizResult,#saveStatus{line-height:1.8;color:#f5d8f2}footer{text-align:center;color:#bbaed0;font-size:13px;line-height:1.9;padding:20px}.heart{position:fixed;bottom:-30px;z-index:3;pointer-events:none;animation:rise 3.5s linear forwards}@keyframes rise{to{transform:translateY(-110vh) rotate(360deg);opacity:0}}@media(max-width:480px){.nav button{font-size:12px;padding:10px 12px}.letter{font-size:19px}}
+
+#moonveilGate{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:20px;background:radial-gradient(ellipse at top,#49345e,#24203e 48%,#111226);text-align:center}
+#moonveilGate .gate-card{width:min(420px,100%);padding:32px 24px;border:1px solid #ffffff35;border-radius:28px;background:#ffffff12;box-shadow:0 16px 45px #07071455}
+#moonveilGate h2{font-size:38px;color:#f5d9f5;margin:10px 0}
+#moonveilGate p{color:#e5d9f0;line-height:1.9}
+#moonveilGate input{width:100%;max-width:260px;text-align:center;letter-spacing:8px}
+#moonveilGate .gate-error{min-height:24px;color:#f2c8df}
+
+</style>
+</head>
+<body>
+
+<div id="moonveilGate">
+  <div class="gate-card">
+    <div style="font-size:58px">🌙 🔐</div>
+    <h2>Moonveil</h2>
+    <p>A little secret garden, just for us.<br>Enter the secret code to come inside ♡</p>
+    <input id="moonveilCode" type="password" inputmode="numeric" maxlength="4" placeholder="••••" aria-label="Secret code">
+    <br><br>
+    <button class="primary" id="moonveilUnlock" type="button">Unlock the garden ✨</button>
+    <p class="gate-error" id="moonveilError" aria-live="polite"></p>
+  </div>
+</div>
+<div id="stars"></div><div class="wrap">
+<header><div class="moon">☾</div><h1>Moonveil</h1><p>A little garden beneath the moon<br>just for you and me ♡</p></header>
+<nav class="nav" aria-label="Moonveil pages">
+<button class="active" data-page="home">✧ The Garden</button><button data-page="letter">♡ A Letter</button><button data-page="memories">✦ Memories</button><button data-page="gift">🎁 A Little Gift</button><button data-page="quiz">☾ Our Quiz</button><button data-page="miss">♡ When You Miss Me</button><button data-page="custom">✎ Customize</button>
+</nav>
+<main>
+<section class="page active" id="home"><div class="card hero"><div class="characters">🐰 🌙 🐱</div><span class="tag">The Bunny</span><span class="tag">The Kitty</span><h2>Welcome to our little universe</h2><p>This is our own tiny corner of the world — filled with soft nights, little secrets, sweet memories, and all the words I sometimes find hard to say.</p><button class="primary" data-go="letter">Read your letter ♡</button><button class="soft" id="sprinkleBtn">Make the stars sparkle ✨</button></div>
+<div class="card"><h2>Our little garden rules</h2><div class="grid"><div class="memory"><div class="emoji">💌</div><b>Always be honest</b><br>Even when words are difficult.</div><div class="memory"><div class="emoji">🌷</div><b>Choose kindness</b><br>Especially on the hard days.</div><div class="memory"><div class="emoji">🐱</div><b>One special kitty</b><br>A place no one else can copy.</div><div class="memory"><div class="emoji">🐰</div><b>One little bunny</b><br>Saving every lovely memory.</div></div></div></section>
+<section class="page" id="letter"><div class="card"><h2>♡ From the Bunny to the Kitty</h2><div class="letter" id="letterText">My favorite person,
+
+From the first page of my story to all the chapters still waiting to be written, I hope you will always have a little place beside me.
+
+There is no one quite like you. You are the one my heart keeps finding in a room full of people, the name that makes an ordinary day feel softer.
+
+I love you, I wish for you, and I choose you in all the little ways that matter. You know you have a special weakness in my heart — one smile from you can change the whole sky.
+
+If forever had a favorite person, I think mine would look a lot like you.
+
+You are my first hello, my favorite chapter, and the person I hope to keep close for a long, long time.
+
+With all my heart,
+Your little Bunny 🐰♡</div><p class="small">You can edit this letter in Customize.</p></div></section>
+<section class="page" id="memories"><div class="card"><h2>✦ Our Memory Garden</h2><p>Little moments that deserve their own stars.</p><div class="grid" id="memoryGrid"><div class="memory"><div class="emoji">🌙</div><b>Our first chapter</b><br>The beginning of something special.</div><div class="memory"><div class="emoji">😂</div><b>The silly moments</b><br>The jokes that still make us smile.</div><div class="memory"><div class="emoji">💗</div><b>Always there</b><br>Every time we made each other feel less alone.</div></div></div><div class="card"><h3>Add a new memory ✧</h3><label for="memoryTitle">Memory title</label><input id="memoryTitle" placeholder="A day worth remembering"><label for="memoryDescription">Your memory</label><textarea id="memoryDescription" placeholder="Write your little moment here..."></textarea><button class="primary" id="addMemory">Plant this memory 🌷</button><p class="small">Added memories stay while this page is open. To keep them permanently, add them to the HTML.</p></div></section>
+<section class="page" id="gift"><div class="card hero"><div class="characters">🎀</div><h2>A tiny gift for you</h2><p>Tap the gift and let the moon choose a little message for you.</p><button class="gift" id="openGift" aria-label="Open a gift">🎁</button><div class="message" id="giftMessage" aria-live="polite">Something sweet is waiting inside...</div><br><button class="primary" id="anotherGift">Another little gift ✨</button></div></section>
+<section class="page" id="quiz"><div class="card"><h2>☾ How well do you know our world?</h2><p>Choose the answers that feel most like us.</p>
+<div class="question"><b>1. What belongs in our little universe?</b><div class="answers"><button>Late-night talks 🌙</button><button>Laughing at everything 😂</button><button>All our little things 💗</button></div></div>
+<div class="question"><b>2. When one of us has a hard day, we should...</b><div class="answers"><button>Listen gently 🫶</button><button>Send something silly 🐱</button><button>Be there in our own way 🌷</button></div></div>
+<div class="question"><b>3. Pick our little symbol.</b><div class="answers"><button>🐰 + 🐱</button><button>🌙 + ⭐</button><button>🌷 + 🦋</button></div></div>
+<div class="question"><b>4. What do we want more of?</b><div class="answers"><button>More memories 📸</button><button>More adventures ✨</button><button>More years together 💞</button></div></div>
+<button class="primary" id="finishQuiz">Finish our quiz ♡</button><p id="quizResult" aria-live="polite"></p></div></section>
+<section class="page" id="miss"><div class="card hero"><div class="characters">🐰 🫂 🐱</div><h2>Open when you miss me</h2><p>If you ever need a gentle reminder that you matter, come here for a little while.</p><button class="gift" id="hugButton" aria-label="Get a virtual hug">💗</button><div class="message" id="hugMessage" aria-live="polite">Tap the heart for a little virtual hug.</div><p>Even when we're not in the same place, I hope you remember how loved, valued, and wonderfully you-shaped you are.</p></div></section>
+<section class="page" id="custom"><div class="card"><h2>✎ Make Moonveil yours</h2><p>Change the nicknames and letter to make this garden feel like you two.</p><label for="bunnyName">Your nickname</label><input id="bunnyName" value="The Bunny"><label for="kittyName">Their nickname</label><input id="kittyName" value="The Kitty"><label for="customLetter">Your letter</label><textarea id="customLetter">My favorite person,
+
+There is no one quite like you. You have a special place in my heart, and I hope we keep making beautiful memories together.
+
+From your little Bunny 🐰♡</textarea><button class="primary" id="saveCustom">Save changes ♡</button><p id="saveStatus" aria-live="polite"></p><p class="small">Changes apply while the page is open. To keep them after closing, update this HTML file.</p></div></section>
+</main><footer>Made beneath the moon, with love ✦ Moonveil ☾<br>For the Bunny & the Kitty ♡</footer></div>
+<script>
+
+const moonveilGate = document.getElementById('moonveilGate');
+function unlockMoonveil() {
+  const enteredCode = document.getElementById('moonveilCode').value;
+  if (enteredCode === '1799') {
+    moonveilGate.style.display = 'none';
+  } else {
+    document.getElementById('moonveilError').textContent = 'That code is not quite right. Try again ♡';
+    document.getElementById('moonveilCode').value = '';
+    document.getElementById('moonveilCode').focus();
+  }
+}
+document.getElementById('moonveilUnlock').addEventListener('click', unlockMoonveil);
+document.getElementById('moonveilCode').addEventListener('keydown', event => {
+  if (event.key === 'Enter') unlockMoonveil();
+});
+
+const pages=[...document.querySelectorAll('.page')],nav=[...document.querySelectorAll('.nav button')];
+function showPage(id){pages.forEach(p=>p.classList.toggle('active',p.id===id));nav.forEach(b=>b.classList.toggle('active',b.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'});}
+nav.forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.page)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showPage(b.dataset.go)));
+for(let i=0;i<48;i++){const s=document.createElement('span');s.className='star';s.textContent=Math.random()>.45?'✦':'·';s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.fontSize=(9+Math.random()*18)+'px';s.style.animationDelay=Math.random()*3+'s';document.getElementById('stars').appendChild(s);}
+function sprinkle(){const symbols=['💗','✨','⭐','🌙','♡'];for(let i=0;i<20;i++){const x=document.createElement('span');x.className='heart';x.textContent=symbols[Math.floor(Math.random()*symbols.length)];x.style.left=Math.random()*100+'%';x.style.fontSize=(16+Math.random()*18)+'px';x.style.animationDelay=Math.random()*1.2+'s';document.body.appendChild(x);setTimeout(()=>x.remove(),4200);}}
+document.getElementById('sprinkleBtn').addEventListener('click',sprinkle);
+const gifts=['You are one of the rare little lights that makes an ordinary day feel special. ♡','If I could give you anything, I would wish you peace, laughter, and a thousand gentle tomorrows. 🌙','There is no copy of you in this world. That is your magic. ✨','You have a place in my heart that nobody else could fill in quite the same way. 💗','May life be soft with you, and may you always find a reason to smile. 🌷','Some people feel like home. You are one of those people. 🏡'];
+function openGift(){document.getElementById('giftMessage').textContent=gifts[Math.floor(Math.random()*gifts.length)];sprinkle();}
+document.getElementById('openGift').addEventListener('click',openGift);document.getElementById('anotherGift').addEventListener('click',openGift);
+const hugs=['Here is a big virtual hug. Take a breath, relax your shoulders, and be gentle with yourself. 🫂','You do not have to make every day perfect. Take it one little moment at a time. 🌙','Sending you a pocketful of stars and the softest hug. ✨💗','I hope something kind finds you today. You deserve gentleness. 🌷'];
+document.getElementById('hugButton').addEventListener('click',()=>{document.getElementById('hugMessage').textContent=hugs[Math.floor(Math.random()*hugs.length)];sprinkle();});
+document.querySelectorAll('.answers').forEach(g=>g.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{g.querySelectorAll('button').forEach(x=>x.classList.remove('chosen'));b.classList.add('chosen');})));
+document.getElementById('finishQuiz').addEventListener('click',()=>{const groups=[...document.querySelectorAll('.answers')],done=groups.filter(g=>g.querySelector('.chosen')).length,r=document.getElementById('quizResult');r.textContent=done<groups.length?`You still have ${groups.length-done} little question(s) to answer. ♡`:'Quiz complete! The best part of our story is all the memories still waiting for us. 🐰🌙🐱';if(done===groups.length)sprinkle();});
+document.getElementById('addMemory').addEventListener('click',()=>{const t=document.getElementById('memoryTitle'),d=document.getElementById('memoryDescription');if(!t.value.trim()||!d.value.trim()){alert('Add a title and a little description first. ♡');return;}const c=document.createElement('div');c.className='memory';const e=document.createElement('div');e.className='emoji';e.textContent='🌟';const h=document.createElement('b');h.textContent=t.value.trim();const p=document.createElement('p');p.textContent=d.value.trim();c.append(e,h,p);document.getElementById('memoryGrid').appendChild(c);t.value='';d.value='';});
+document.getElementById('saveCustom').addEventListener('click',()=>{document.querySelectorAll('.tag')[0].textContent=document.getElementById('bunnyName').value.trim()||'The Bunny';document.querySelectorAll('.tag')[1].textContent=document.getElementById('kittyName').value.trim()||'The Kitty';document.getElementById('letterText').textContent=document.getElementById('customLetter').value;document.getElementById('saveStatus').textContent='Your changes are saved on this open page. ♡';});
+</script>
+</body>
+</html>
